@@ -50,7 +50,7 @@ public class BPServer {
 		handlers.setHandlers(new Handler[] { fileHandler, context});
 		server.setHandler(handlers);
 
-		System.out.println(">> Go to http://localhost:" + port + "/mxgraph/javascript/examples/grapheditor/www/index.html");
+		System.out.println(">> Go to http://localhost:" + port + "/m/javascript/examples/grapheditor/www/index.html");
 	}
 	
 	public void start() throws Exception {
