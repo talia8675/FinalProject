@@ -27,11 +27,25 @@
 		</repository>
 	</repositories>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-dom -->
 		<dependency>
-			<groupId>com.github.bthink-bgu</groupId>
-			<artifactId>BPjs</artifactId>
-			<version>0.9.1</version>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-dom</artifactId>
+			<version>1.10</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-svg-dom -->
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-svg-dom</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-anim -->
+		<!--<dependency>-->
+			<!--<groupId>org.apache.xmlgraphics</groupId>-->
+			<!--<artifactId>batik-anim</artifactId>-->
+			<!--<version>1.8</version>-->
+		<!--</dependency>-->
+
 
 		<!-- https://mvnrepository.com/artifact/javax.websocket/javax.websocket-api -->
 		<dependency>
@@ -93,12 +107,6 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.google.firebase</groupId>
-			<artifactId>firebase-admin</artifactId>
-			<version>5.9.0</version>
 		</dependency>
 	</dependencies>
 

@@ -11,8 +11,6 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.websocket.jsr356.server.ServerContainer;
 import org.eclipse.jetty.websocket.jsr356.server.deploy.WebSocketServerContainerInitializer;
 
-import hackbgu.bgu.ac.il.services.DashboardServlet;
-
 public class BPServer {
 	private Server server;
 
@@ -28,15 +26,13 @@ public class BPServer {
 		context.setContextPath("/");
 		server.setHandler(context);
 
-		context.addServlet(new ServletHolder(new SaveServlet()), "/save");
-		//context.addServlet(new ServletHolder(new ExportServlet()), "/export");
-		context.addServlet(new ServletHolder(new FlowOpenServlet()), "/open");
+//		context.addServlet(new ServletHolder(new SaveServlet()), "/save");
+//		//context.addServlet(new ServletHolder(new ExportServlet()), "/export");
+//		context.addServlet(new ServletHolder(new FlowOpenServlet()), "/open");
 		context.addServlet(new ServletHolder(new RunServlet()), "/run");
-		context.addServlet(new ServletHolder(new EventPushSerlet()), "/push");
+//		context.addServlet(new ServletHolder(new EventPushSerlet()), "/push");
 		
 		
-		context.addServlet(new ServletHolder(new DashboardServlet()), "/dashboard/users/*");
-		context.addServlet(new ServletHolder(new DashboardServlet()), "/dashboard/courses/*");
 
 		ResourceHandler fileHandler = new ResourceHandler();
 		fileHandler.setResourceBase(".");
@@ -44,7 +40,7 @@ public class BPServer {
 		// Add javax.websocket support
         ServerContainer container = WebSocketServerContainerInitializer.configureContext(context);
 
-        // Add endpoint to server container
+        // Add endpoint to server container -- IGNORE
         ServerEndpointConfig cfg = ServerEndpointConfig.Builder.create(EventQueue.class,"/eventqueue").build();
         container.addEndpoint(cfg);
 		
@@ -54,7 +50,7 @@ public class BPServer {
 		handlers.setHandlers(new Handler[] { fileHandler, context});
 		server.setHandler(handlers);
 
-		System.out.println(">> Go to http://localhost:" + port + "/editor/index.html");
+		System.out.println(">> Go to http://localhost:" + port + "/mxgraph/javascript/examples/grapheditor/www/index.html");
 	}
 	
 	public void start() throws Exception {
