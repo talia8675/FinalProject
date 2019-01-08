@@ -27,7 +27,7 @@ public class Vertex {
 
     public boolean isBetween(Vertex v1,Vertex v2) {
         if (v1.getX() < x && x < v2.getX()) {
-            if (Math.min(v1.getY(), v2.getY()) < y && y < Math.max(v1.getY(), v2.getY()))
+            if (Math.min(v1.getY(), v2.getY()) <= y && y <= Math.max(v1.getY(), v2.getY()))
                 return true;
 
         }

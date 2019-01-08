@@ -40,11 +40,11 @@ public class Line  extends Shape {
     }
 
     public double getM() {
-        return (xStart-yStart)/(xEnd-yEnd);
+        return (yEnd-yStart)/(xEnd-xStart);
     }
 
     public double getB() {
-        return yStart-xEnd*getM();
+        return yStart-xStart*getM();
     }
 
     @Override
@@ -105,7 +105,7 @@ public class Line  extends Shape {
         if (ms == 0) return ans;
         double xInter= (s.getB()-this.getB())/ms;
         if (this.xStart<=xInter && xInter<=this.xEnd && s.getXStart()<=xInter && xInter<=s.getXEnd()){
-            ans.add(new Point2D.Double(xInter,yStart-this.getM()*xStart));
+            ans.add(new Point2D.Double(xInter,this.getM()*xInter+this.getB()));
         }
         return ans;
     }

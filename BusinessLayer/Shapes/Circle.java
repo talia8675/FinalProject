@@ -135,8 +135,8 @@ public class Circle extends Shape{
     public List<Point2D.Double> getIntersections_visit(Line s) {
         List<Point2D.Double> ans=new LinkedList<Point2D.Double>();
         double a = s.getM()*s.getM() + 1;
-        double b = 2 * (s.getB()-y-x);
-        double c = (s.getB()-y)*(s.getB()-y) - r*r;
+        double b = 2 * ((s.getB()-y)*s.getM()-x);
+        double c = (s.getB()-y)*(s.getB()-y) + x*x - r*r;
         double[] intesectionX = QuadraticEquationSol(a,b,c);
         for (int i=0;i<intesectionX.length;i++) {
             if (s.getXStart()<=intesectionX[i] && intesectionX[i]<=s.getXEnd()) {

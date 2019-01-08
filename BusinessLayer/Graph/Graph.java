@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class Graph {
+
     private Set<Vertex> vertex;
     private Set<Edge> edges;
 
@@ -63,7 +64,7 @@ public class Graph {
         return this.edges;
     }
 
-    private Map<Vertex,Set<Vertex>> allAdjacents(){
+    public Map<Vertex,Set<Vertex>> allAdjacents(){
         Map<Vertex,Set<Vertex>> allAdjacents = new HashMap<Vertex,Set<Vertex>>();
         for (Vertex v : vertex){
             Set<Vertex> adjacents = new HashSet<Vertex>();
@@ -122,7 +123,7 @@ public class Graph {
 		return edgesPaths;
 	}*/
 
-    private Set<List<Edge>> edgesFromVertex(Set<List<Vertex>> vertexPaths){
+    public Set<List<Edge>> edgesFromVertex(Set<List<Vertex>> vertexPaths){
         Set<List<Edge>> edgesPaths = new HashSet<List<Edge>>();
         for(List<Vertex> vertexPath : vertexPaths){
             List<Edge> edgesPath = new LinkedList<Edge>();
