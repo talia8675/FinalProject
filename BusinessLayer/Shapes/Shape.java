@@ -39,4 +39,13 @@ public abstract class Shape {
             }
         }
     }
+
+    abstract public double getMinY();
+
+    abstract public void moveYbyH(double h);
+
+    abstract public double getMinX();
+
+    abstract public void moveXbyH(double h);
+
 }

@@ -149,6 +149,7 @@ public class CheckingAlgorithm {
         if (matchVertex.isEmpty()) return null;
         Set<List<Edge>> pathsListG1=new HashSet<List<Edge>> ();
         Set<List<Edge>> pathsListG2=new HashSet<List<Edge>> ();
+        System.out.println("here!");
         if (checkAlgorithem(g1, g2, matchVertex, pathsListG1, pathsListG2)) {
             return new Pair<Set<List<Edge>>,Set<List<Edge>>>(pathsListG1,pathsListG2);
         }
@@ -159,7 +160,7 @@ public class CheckingAlgorithm {
                                            Set<List<Edge>> pathsListG1,Set<List<Edge>> pathsListG2) {
         if (g1.getEdges().isEmpty() && g2.getEdges().isEmpty()) return true;
         if (g1.getEdges().isEmpty() || g2.getEdges().isEmpty()) return false;
-
+        //System.out.println("g1: "+g1.getEdges().size()+" g2: "+g2.getEdges().size());
         for (Pair<Vertex,Vertex> p1 : matchVertex) {
             for (Pair<Vertex,Vertex> p2 : matchVertex) {
                 if (p1.equals(p2)) continue;

@@ -123,5 +123,29 @@ public class Line  extends Shape {
                 this.xEnd==other.getXEnd() && this.yEnd==other.getYEnd()) return true;
         else return false;
     }
+
+    public double getMinY(){
+        if(this.yStart<this.yEnd)
+            return this.yStart;
+        else
+            return this.yEnd;
+    }
+
+    public double getMinX(){
+        if(this.xStart<this.xEnd)
+            return this.xStart;
+        else
+            return this.xEnd;
+    }
+
+    public void moveYbyH(double h){
+        this.yStart = this.yStart - h;
+        this.yEnd = this.yEnd - h;
+    }
+
+    public void moveXbyH(double h){
+        this.xStart = this.xStart - h;
+        this.xEnd = this.xEnd - h;
+    }
 }
 

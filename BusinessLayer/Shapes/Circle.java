@@ -181,4 +181,20 @@ public class Circle extends Shape{
         else return false;
     }
 
+    public double getMinY(){
+        return this.y - this.r;
+    }
+
+    public double getMinX(){
+        return this.x - this.r;
+    }
+
+    public void moveYbyH(double h){
+        this.y = this.y - h;
+    }
+
+    public void moveXbyH(double h){
+        this.x = this.x - h;
+    }
+
 }

@@ -605,7 +605,7 @@ Actions.prototype.init = function()
 	});
 
 	//Illusions actions
-    this.addAction('createIllusion', function() { ui.saveFile(false); }, null, null).isEnabled = isGraphEnabled;
+    this.addAction('createIllusion', function() { ui.saveFile(false);}, null, null).isEnabled = isGraphEnabled;
     this.addAction('allObjects...', function(evt) { }, null, null);
     this.addAction('similarObjects...', function(evt) { }, null, null);
 
