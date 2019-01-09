@@ -10,11 +10,27 @@ import java.util.Scanner;
 
 
 public class SVGParser {
-    public static void zeroY(List<Shape> shapes){
+    public static void zero(List<Shape> shapes){
         //find min Y
-        double minY;
+        double minY = shapes.get(0).getMinY();
         for(Shape s : shapes){
-            //if(instanceOf)
+            if (s.getMinY() < minY){
+                minY = s.getMinY();
+            }
+        }
+        for(Shape s : shapes){
+            s.moveYbyH(minY);
+        }
+
+        //find min X
+        double minX = shapes.get(0).getMinX();
+        for(Shape s : shapes){
+            if (s.getMinX() < minX){
+                minX = s.getMinX();
+            }
+        }
+        for(Shape s : shapes){
+            s.moveXbyH(minX);
         }
     }
 
@@ -83,7 +99,8 @@ public class SVGParser {
             }
         }
         sc2.close();
-        zeroY(shapes2);
+        zero(shapes1);
+        zero(shapes2);
         Pair<List<Shape>,List<Shape>> p = new Pair<>(shapes1,shapes2);
         return p;
     }
@@ -108,26 +125,10 @@ public class SVGParser {
 
     public static void main(String[] args) throws FileNotFoundException
     {
-		/*
-		String path1_Yes = "C:\\Users\\sapir\\Desktop\\SVG\\Diagram1(1).svg";
-		String path2_Yes = "C:\\Users\\sapir\\Desktop\\SVG\\Diagram2(1).svg";
-		if(decide(path1_Yes,path2_Yes))
-			System.out.println("yes!!!!");
-		else
-			System.out.println("no");*/
-        String path1_No = "C:\\Users\\hp\\Downloads\\DiagramCircles.svg";
-        //String path2_No = "C:\\Users\\hp\\Downloads\\Diagram2(1).svg";
+        String path1_No = "C:\\Users\\hp\\Downloads\\DiagramCircles2.svg";
         if(decide(path1_No))
             System.out.println("yes!!!!");
         else
             System.out.println("no");
-		/*
-		String path1_No = "C:\\Users\\sapir\\Desktop\\SVG\\1.svg";
-		String path2_No = "C:\\Users\\sapir\\Desktop\\SVG\\2.svg";
-		if(decide(path1_No,path2_No))
-			System.out.println("yes!!!!");
-		else
-			System.out.println("no");*/
-
     }
 }
