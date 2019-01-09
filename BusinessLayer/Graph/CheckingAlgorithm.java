@@ -112,7 +112,7 @@ public class CheckingAlgorithm {
     }
 
 
-    private static boolean isPathIntersect(List<Edge> path1,List<Edge> path2) {
+    public static boolean isPathIntersect(List<Edge> path1,List<Edge> path2) {
         Edge[] p1 = new Edge[path1.size()];
         path1.toArray(p1); // fill the array
         Edge[] p2 = new Edge[path2.size()];
@@ -155,7 +155,7 @@ public class CheckingAlgorithm {
         return null;
     }
 
-    private static boolean checkAlgorithem(Graph g1,Graph g2,List<Pair<Vertex,Vertex>> matchVertex,
+    public static boolean checkAlgorithem(Graph g1,Graph g2,List<Pair<Vertex,Vertex>> matchVertex,
                                            Set<List<Edge>> pathsListG1,Set<List<Edge>> pathsListG2) {
         if (g1.getEdges().isEmpty() && g2.getEdges().isEmpty()) return true;
         if (g1.getEdges().isEmpty() || g2.getEdges().isEmpty()) return false;
